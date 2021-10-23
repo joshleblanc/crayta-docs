@@ -36,26 +36,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      navbar: {
-        title: 'CraytaKit',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            type: 'doc',
-            docId: 'globals',
-            position: 'left',
-            label: 'Docs',
-          },
-          {
-            href: 'https://github.com/joshleblanc/crayta-docs',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
+      navbar: {},
       footer: {
         style: 'dark',
         links: [
