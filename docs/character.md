@@ -30,6 +30,33 @@
 
 ## Properties
 
+
+| Property Name | Return Type | Description | Tags |
+|---------------|-------------|-------------|------|
+| speedMultiplier | number | Multiplier on movement speed (default is 1.0)	| Read-Write |
+| jumpHeightMultiplier | number | Multiplier on jump height (default is 1.0) | Read-Write |
+| canSprint | boolean | Turn on or off ability to sprint | Read-Write |
+| canRun | boolean | Turn on or off ability to run	| Read-Write |
+| canWalk | boolean | Turn on or off ability to walk	| Read-Write |
+| canMantle | boolean | Turn on or off ability to mantle	| Read-Write |
+| maxMantleHeight | boolean | Set the maximum height that a player can mantle | Read-Write |
+| canSlide | boolean | Turn on or off ability to slide	| Read-Write |
+| canRoll | boolean | Turn on or off ability to roll	| Read-Write |
+| canRelax | boolean | Turn on or off ability to go into a grip's relaxed pose	 | Read-Write |
+| breakFall | boolean | Turn on or off ability to break fall on landing	 | Read-Write |
+| breakFallSpeed | boolean | Turn on or off ability to break fall on landing	| Read-Write |
+| canJump | boolean | Turn on or off ability to jump	| Read-Write |
+| displayDefaultNameTag	| boolean | Turn on or off the default name tag	 | Read-Write |
+| displayDefaultQuickChat	| boolean | Turn on or off the default overhead quick chat	| Read-Write |
+| canCrouch | boolean | Turn on or off ability to crouch or go prone	 | Read-Write |
+| interactionRange | number | Interaction range (from camera in cm)	| Read-Write |
+| cameraType	| number | Set the character camera type. 1 = Action, 2 = Orbit	| Read-Write |
+| forcedCameraPerspective | number | Set restrictions on the action player camera perspective. 1 = No Restrictions, 2 = 1st Person Only, 3 = 3rd Person Only. (Default is 1) | Read-Write |
+| canIronSight | boolean | Will the action camera iron-sight on secondary press	| Read-Write |
+| thirdPersonFOV	| number | FOV of the third person action camera	| Read-Write |
+| thirdPersonIronSightFOV	| number | FOV of the third person action camera in Iron Sight mode	 | Read-Write |
+| firstPersonFOV	| number | FOV of the third person action camera	| Read-Write |
+
 ## Examples
 
 ### AdjustAim
