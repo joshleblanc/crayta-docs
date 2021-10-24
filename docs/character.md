@@ -8,7 +8,42 @@
 | GetUser() | [User](user) | Get the User entity which controls this Character	 | None |
 | SetAlive(boolean alive) | None | Set the character state to alive or dead | Server Only |
 | IsAlive() | boolean | Get whether a Player is alive. Return false for non-Player | None |
+| GetLookAtPos() | [Vector](vector) | Get the point the player is looking at, for an action camera this is the same as User:GetCameraLookAtPos but for orbit style cameras it will be in front of the player | Server Only, Local Only |
+| GetLookAt() | [Vector](vector), [Vector](vector) | Return two values, the position of the player's virtual "eye" and the position the player is looking at. For an action camera this is the same as User:GetCameraLookAt but for an orbit style camera it will be the player's head position and what is in front of the player | Server Only, Local Only |
+| SetInputLocked(boolean inputLocked) | None | Lock player control | Server Only, Local Only |
+| SetGrip([GripAsset](grip_asset) gripAsset) | None | Set the current grip animations used by this player. Passing nil is the same as calling SetNoGrip() | None |
+| SetNoGrip() | None | 	Reverts the player back to the default 'unarmed' animations. Can also be achieved by calling SetGrip(nil) | None |
+| PlayAction(string action, table properties) | None | Play an animation action, with properties specifying how it should be played | None |
+| PlayAction(string action) | None | Play an animation action with default properties	 | None |
+| HasAction(string action) | boolean | Returns true if the current grip can perform this type of action | None |
+| GetActions() | table | Get the name of every available action for the current grip | None |
+| GetActionEvents(string action) | table | Get the name of every available event for an action | None |
+| HasActionEvent(string action, string event) | boolean | Returns true if this action has an animation event of the specified name | None |
+| GetPlayLength(string action) | number | Returns the length of an animation, in seconds, assuming a playbackSpeed of 1 is set | None |
+| Launch([Vector](vector) vector) | None | Launch the character	| None |
+| GetInteraction() | [Entity](entity), [HitResult](hit_result) | Get whichever Entity you would interact with if you pressed interact | Server Only, Local Only |
+| PlayVibrationEffect([VibrationEffectAsset](vibration_effect_asset) effect) | None | Plays the given vibration effect on the player's controller | None |
+| PlayManualVibration(number intensity, number duration, boolean affectSmallMotors, boolean affectLargeMotors) | Manually vibrate the player's controller | None |
+| AdjustAim(...) | [AdjustAimHandle](adjust_aim_handle) | Programmatically move the user's camera to look at specific points | None |
+| CancelAdjustAim([AdjustAimHandle](adjust_aim_handle) handle) | Cancel an aim adjustment | None |
+| IsAdjustAimActive() | boolean | Returns whether the player's aim is currently being adjusted | None |
 
 ## Properties
 
 ## Examples
+
+### AdjustAim
+
+AdjustAim works in much the same way as timelines. It accepts any number of arguments, where the first argument is speed, the second argument is either a relative rotation, or a vector to look at, and the third parameter is easing. 
+
+Possible easing values are "Linear" (default), "EaseIn", and "EaseInOut".
+
+```lua
+function ExampleScript:LookAtStuff(player)
+    player:AdjustAim(
+        10, Vector.New(100, 100, 100) -- look at point (100, 100, 100) with speed 10,
+        100, Rotation.New(360, 0, 0), "EaseOut", -- Rotate 360 degrees with a speed of 100, easing out of the last position
+        1000, Vector.New(0,0,0), "EaseIn", -- Look at point (0, 0, 0) with a speed of 1000, easing in as the adjustment finished
+    )
+end
+```
