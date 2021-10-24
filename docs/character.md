@@ -56,6 +56,15 @@
 | thirdPersonFOV	| number | FOV of the third person action camera	| Read-Write |
 | thirdPersonIronSightFOV	| number | FOV of the third person action camera in Iron Sight mode	 | Read-Write |
 | firstPersonFOV	| number | FOV of the third person action camera	| Read-Write |
+| firstPersonIronSightFOV | number | FOV of the third person action camera in Iron Sight mode	 | Read-Write |
+| ironSightLookSpeedMultiplier | number | Speed multiplier of the look controls in Iron Sight mode	 | Read-Write |
+| cameraDistance | number | Set the orbit camera max distance from the character	 | Read-Write |
+| cameraPitch | number | Set the orbit camera's pitch	 | Read-Write |
+| cameraYaw	 | number | Set the orbit camera's yaw	 | Read-Write |
+| cameraLock | boolean | Lock/Unlock the orbit camera	 | Read-Write |
+| cameraSecondaryAction | number | Set what the secondary action does in the orbit camera	| Read-Write |
+| cameraCollisionEnabled | boolean | Enable/Disable the camera's collision	 | Read-Write |
+| damageEnabled | boolean | Turn on or off damage (ie calling of entry point OnDamaged) | Read-Write |
 
 ## Examples
 
