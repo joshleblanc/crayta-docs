@@ -1,13 +1,13 @@
 # math
 
-## Functions
+## Class Functions
 
 | Function Name | Return Type | Description | Tags |
 |---------------|-------------|-------------|------|
-| lerp(number a, number b, number t) | number | The interpolated float result between the two float values | None |
-| sign(number a)| number | Returns 1 if value is position, -1 if value is negative | None |
-| copysign(number a, number b) | number |Copies the sign from b onto a | None |  
-| clamp(number a, number min, number max) | number | Clamps the given value between the given minimum float and maximum float values. Returns the given value if it is within the min and max range | None |
+| math.lerp(number a, number b, number t) | number | The interpolated float result between the two float values | None |
+| math.sign(number a)| number | Returns 1 if value is position, -1 if value is negative | None |
+| math.copysign(number a, number b) | number |Copies the sign from b onto a | None |  
+| math.clamp(number a, number min, number max) | number | Clamps the given value between the given minimum float and maximum float values. Returns the given value if it is within the min and max range | None |
 
 ## Examples
 
