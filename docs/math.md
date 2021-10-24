@@ -2,7 +2,7 @@
 
 ## Class Functions
 
-| Function Name | Return Type | Description | Tags |
+| Class Function Name | Return Type | Description | Tags |
 |---------------|-------------|-------------|------|
 | math.lerp(number a, number b, number t) | number | The interpolated float result between the two float values | None |
 | math.sign(number a)| number | Returns 1 if value is position, -1 if value is negative | None |

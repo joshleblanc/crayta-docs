@@ -2,7 +2,7 @@
 
 ## Class Functions
 
-| Function Name | Return Type | Description | Tag |
+| Class Function Name | Return Type | Description | Tag |
 | ------------- | ----------- | ----------- | --- |
 | Analytics.SendTelemetry([Entity](entity) entity, string type, table parameters) | None | Send an type of telemetry event to the telemetry server with the given entity and parametersTable for later analysis | None |
 | Analytics.SendTelemetry(string type, table parameters) | None | Send an type of telemetry event to the telemetry server with the given parametersTable for later analysis | None |
