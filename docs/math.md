@@ -15,7 +15,7 @@
 
 Linearly interpolates between a and b by t.
 
-The parameter t is clamped to the range [0, 1].
+The parameter t is **not** clamped to the range [0, 1] and is effectively the same as `a + (b - a) * t`
 
 When t = 0 returns a.
 When t = 1 return b.
@@ -23,12 +23,14 @@ When t = 0.5 returns the midpoint of a and b.
 
 ```lua
 function ExampleScript:Lerp()
-    local a = 1
+    local a = 0
     local b = 100
 
-    print(math.lerp(a, b, 0)) -- prints 1
-    print(math.lerp(a, b, 0.5)) -- prints 50.5
+    print(math.lerp(a, b, -0.5)) -- prints -50
+    print(math.lerp(a, b, 0)) -- prints 0
+    print(math.lerp(a, b, 0.5)) -- prints 50
     print(math.lerp(a, b, 1)) -- prints 100
+    print(math.lerp(a, b, 1.5)) -- prints 150
 end
 ```
 
@@ -41,6 +43,7 @@ function ExampleScript:Sign()
     print(math.sign(a)) -- prints 1
     print(math.sign(b)) -- prints -1
 end
+```
 
 ### copysign
 
