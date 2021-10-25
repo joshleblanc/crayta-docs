@@ -102,6 +102,15 @@
 
 | Property Name | Return Type | Description | Tags |
 |---------------|-------------|-------------|------|
+| visible | boolean | Set whether any physical aspect of the Entity (generally a mesh or a light) is visible within the world | None |
+| onInteract | [Event](event) | Called when this entity is interacted with by a player, with the player Character and the HitResult passed as arguments, as well as the Entity from which the onInteract event was sent. An alternative to listening for OnInteract in a script on the entity | None |
+| onDestroy | [Event](event) | Called when this entity is destroyed, with the Entity which sent the event passed as an argument. An alternative to listening for OnDestroy in a script on the entity | None | 
+
+### Overrides
+
+| Override Name | Return Type | Description | Tags |
+|---------------|-------------|-------------|------|
+| index | object | Get a script or widget from the Entity by name, or a mesh, light, etc component on this entity. ie entity.myScript returns a script called myScript, entity.theHud returns a widget named theHud, entity.mesh returns the Mesh of this Entity, entity.light returns the property bag for a light component, etc | None |
 
 ## Examples
 
