@@ -39,7 +39,7 @@
 
 | Constant Name | Return Type | Description | Tags |
 |---------------|-------------|-------------|------|
-| Zero | [Vector][vector] | Zero vector (0, 0, 0) | None |
+| Zero | [Vector](vector) | Zero vector (0, 0, 0) | None |
 
 ## Overrides 
 
