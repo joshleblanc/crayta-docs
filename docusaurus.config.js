@@ -10,7 +10,7 @@ const config = {
   tagline: '',
   url: 'https://craytakit.com/',
   baseUrl: '/crayta_api/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'CraytaKit', // Usually your GitHub org/user name.
