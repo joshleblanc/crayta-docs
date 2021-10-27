@@ -33,7 +33,7 @@
 | GetServerTime() | number | Get server up time in seconds (can be called on client or server) | None |
 | GetUTCTime() | number | Gets unit time (number of seconds that have elapsed since Jan 1 1970). This has an issue that it will start to overflow 32-bits in 2038 | None |
 | GetGames(string railName, function callback) | None | Get all games from a specified rail | None |
-| GetGames(table<string> railNames, function callback) | None | Get all games from the specified rails | None |
+| GetGames(table`<string>` railNames, function callback) | None | Get all games from the specified rails | None |
 | GetActiveChallenges() | table | Gets the current active challenges | None |
 | PlayCameraShakeEffectAtLocation([CameraShakeAsset](camera_shake_asset) cameraShake, number scale, [Vector](vector) location, number innerRadius, number outerRadius, number falloff, boolean orientToDirection) | None | Play a camera shake effect at this location in the world with a scale multiplier	| None |
 | PlayCameraShakeEffectAtLocation([CameraShakeAsset](camera_shake_asset) cameraShake, [Vector](vector) location, number innerRadius, number outerRadius, number falloff, boolean orientToDirection) | None | Play a camera shake effect at this location in the world | None |
@@ -103,8 +103,13 @@ damageModifiers = {
 
 ### SetVoxelProperties
 
-VoxelProperties is a table of { voxel = <voxelasset>, health = <number>, healTime = <number> } tables, and/or scripts that have voxel, and optionally health and healTime properties: { name = "voxel", type = "voxelasset" }, { name = "health", type = "number", default = 100 }, { name = "healTime", type = "number", editor = "seconds", default = 3 }. voxelProperties = { { voxel = <voxelasset>, health = <number>, healTime = <number> }, { voxel = <voxelasset>, health = <number> }, { voxel = <voxelasset>, healTime = <number> }, <script>, <script> } Defaults are 100 for health, 3.0 for heal time.
+VoxelProperties is a table of `{ voxel = <voxelasset>, health = <number>, healTime = <number> }` tables, and/or scripts that have voxel, and optionally health and healTime properties: `{ name = "voxel", type = "voxelasset" }, { name = "health", type = "number", default = 100 }, { name = "healTime", type = "number", editor = "seconds", default = 3 }. voxelProperties = { { voxel = <voxelasset>, health = <number>, healTime = <number> }, { voxel = <voxelasset>, health = <number> }, { voxel = <voxelasset>, healTime = <number> }, <script>, <script> }` Defaults are 100 for health, 3.0 for heal time.
 
 ### GetActiveChallenges
 
-Example result table: result = {} result[1] = {id = <ChallengeId>, name = <LocalisedName>, icon = <IconUrl>, count = <TotalCountToComplete>} result[2] = {id...
+Example result table: 
+
+```
+result = {} 
+result[1] = {id = <ChallengeId>, name = <LocalisedName>, icon = <IconUrl>, count = <TotalCountToComplete>} result[2] = {id...
+```

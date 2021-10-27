@@ -12,7 +12,7 @@
 | PlayAnimationClient(string animationName) | [AnimationHandle](animation_handle) | Use PlayAnimation instead, works on client or server | Deprecated |
 | PlayAnimationClient(string animationname, boolean looping) | [AnimationHandle](animation_handle) | Use PlayAnimation instead, works on client or server | Deprecated |
 | PlayAnimationLoopingClient(string animationName, boolean looping) | [AnimationHandle](animation_handle) | Use PlayAnimation instead, works on client or server | Deprecated |
-| GetAnimationNames() | table<string> | Get a table of animation names that you can play on this mesh with PlayAnimation | None |
+| GetAnimationNames() | table`<string>` | Get a table of animation names that you can play on this mesh with PlayAnimation | None |
 | GetAnimationLength(string animationName) | number | Get the length of an animation in seconds | None |
 | CreateThruster() | [Thruster](thruster) | Add a thruster to an entity | None |
 | CreateRelativeThruster() | [Thruster](thruster) | Add a relative thruster to an entity | None |
