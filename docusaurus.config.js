@@ -37,30 +37,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {},
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Docs',
-                to: '/docs',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/crayta',
-              },
-            ],
-          },
-        ],
-        copyright: `Built with Docusaurus.`,
-      },
+      footer: {},
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
