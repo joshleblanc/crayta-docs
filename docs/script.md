@@ -44,7 +44,7 @@ end
 | OnTick(number deltaTime) | None | Called each frame on the server, passed the time in seconds since the last call | Server Only |
 | ClientOnTick(number deltaTime) | None | Called each frame on the client, passed the time in seconds since the last call | Client Only |
 | LocalOnTick(number deltaTime) | None | Called each frame on the client that owns this script, passed the time in seconds since the last call | Local Only |
-| OnUserLogin([User](user) user) | None | Called when a new user joins the game | Server Only |
+| [OnUserLogin([User](user) user)](#onuserlogin) | None | Called when a new user joins the game | Server Only |
 | OnUserLogout([User](user) user) | None | Called when a user leaves the game | Server Only |
 | OnDeathPlaneTrigger() | None | Called on the player when the player is below the death plane | Server Only |
 | OnTriggerEnter([Entity](entity) entity) | None | Called by a trigger component when an entity enters the trigger volume | Server Only |
@@ -87,3 +87,19 @@ end
 | OnActivityTriggered(string id, [Text](text) display, string category) | None | Called when an activity is triggered | None | 
 
 ## Examples
+
+### OnUserLogin
+
+When OnUserLogin is registered, it disables automatically spawning the player.
+
+```lua
+
+ExampleScript.Properties = {
+  { name = "spawnLocator", type = "entity" },
+  { name = "playerTemplate", type "template" }
+}
+
+function ExampleScript:OnUserLogin(user)
+  user:SpawnPlayerWithEffect(self.properties.playerTemplate, self.properties.spawnLocator)
+end
+```
