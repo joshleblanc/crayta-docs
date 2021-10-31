@@ -113,3 +113,13 @@ Example result table:
 result = {} 
 result[1] = {id = <ChallengeId>, name = <LocalisedName>, icon = <IconUrl>, count = <TotalCountToComplete>} result[2] = {id...
 ```
+
+### ForEachUser
+
+```
+GetWorld():ForEachUser(
+    function(userEntity)
+        userEntity:DespawnPlayerWithEffect()
+    end
+)
+```
