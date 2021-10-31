@@ -116,10 +116,10 @@ result[1] = {id = <ChallengeId>, name = <LocalisedName>, icon = <IconUrl>, count
 
 ### ForEachUser
 
-```
-GetWorld():ForEachUser(
-    function(userEntity)
+```lua
+function ExampleScript:DespawnAllPlayers()
+    GetWorld():ForEachUser(function(userEntity)
         userEntity:DespawnPlayerWithEffect()
-    end
-)
+    end)
+end
 ```
