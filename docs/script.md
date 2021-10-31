@@ -103,3 +103,16 @@ function ExampleScript:OnUserLogin(user)
   user:SpawnPlayerWithEffect(self.properties.playerTemplate, self.properties.spawnLocator)
 end
 ```
+
+### Schedule
+
+Spawn an enemy every X seconds, where X = self.properties.enemySpawnFrequency
+
+```
+self.enemySpawnTask = self:Schedule(
+	function ()
+	  Wait(self.properties.enemySpawnFrequency)
+	  local enemyObj = GetWorld():Spawn(self.enemyTemplate, self:GetEntity():GetPosition(), self:GetEntity():GetRotation())
+	end
+)
+```
