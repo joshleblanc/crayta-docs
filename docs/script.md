@@ -106,13 +106,21 @@ end
 
 ### Schedule
 
-Spawn an enemy every X seconds, where X = self.properties.enemySpawnFrequency
+Spawn an enemy every 10 seconds
 
-```
-self.enemySpawnTask = self:Schedule(
-	function ()
-	  Wait(self.properties.enemySpawnFrequency)
-	  local enemyObj = GetWorld():Spawn(self.enemyTemplate, self:GetEntity():GetPosition(), self:GetEntity():GetRotation())
-	end
-)
+```lua
+ExampleScript.Properties = {
+	{ name = "enemySpawnFrequency", type = "number", default = 10 },
+	{ name = "enemyTemplate", type = "template" }
+}
+
+function ExampleScript:SpawnEnemies()
+	self.enemySpawnScheduleHandle = self:Schedule(function()
+		while true do
+			Wait(self.properties.enemySpawnFrequency)
+
+			local enemyObj = GetWorld():Spawn(self.properties.enemyTemplate, self:GetEntity():GetPosition(), self:GetEntity():GetRotation())
+		end
+	end)
+end
 ```
