@@ -31,3 +31,11 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .footer {
   display: none;
 }
+
+div[class^=searchBox] {
+  flex-grow: 1;
+}
+
+.DocSearch.DocSearch-Button {
+  width: 100%;
+}
