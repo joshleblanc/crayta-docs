@@ -61,9 +61,6 @@ const config = {
   
         indexName: 'crayta_api',
   
-        // Optional: Algolia search parameters
-        searchParameters: { 'facetFilters': ["type:content"] },
-  
         //... other Algolia params
       },
     }),
