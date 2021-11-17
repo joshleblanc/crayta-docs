@@ -87,6 +87,6 @@ For example, to force the user to move only left and right:
 
 ```lua
 function UserScript:Init()
-  self:GetEntity():SetMoveOverride(Vector.New(1, 0), Vector.Zero)
+  self:GetEntity():SetMoveOverride(Vector2D.New(1, 0), Vector2D.Zero)
 end
 ```
