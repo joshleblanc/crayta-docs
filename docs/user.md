@@ -47,7 +47,7 @@
 | SetLookOverride([Vector2D](vector_2d) scale, [Vector2D](vector_2d) add) | None | Set a scale on the user's actual look input and an addition 2D vector to add to it. Used for example to auto-look a player at a particular point by scaling the real input down to zero and adding an additional value | None |
 | SetLeaderboardValue(string leaderboardId, number value, function callback) | None | Set a value in the given leaderboard with the given value. Call the given callback with the result | Server Only |
 | SetLeaderboardValue(string leaderboardId, number value) | None | Set a value in the given leaderboard with the given value | Server Only |
-| GetLeaderboardValue(string leaderboardId, function callback) | None | Gets the highest ranking value on the specified leaderboard for this user. Results are returned as parameters to the callback function. Callback function parameters are Score & Rank | Server Only |
+| GetLeaderboardValue(string leaderboardId, function callback) | None | Gets the highest ranking value on the specified leaderboard for this user. Results are returned as parameters to the callback function. Callback function parameters are Score & Rank | None |
 | AddToLeaderboardValue(string leaderboardId, number increment, function callback) | None | Add a number to the leaderboard value on the specified leaderboard for this user. Results are returned as parameters to the callback function. Callback function parameter is the new score | None |
 | AddToLeaderboardValue(string leaderboardId, number increment) | None | Add a number to the leaderboard value on the specified leaderboard for this user | Server Only |
 | GetChallengeProgress(string challengeId) | number | Gets the current progress on an active challenge | None |
