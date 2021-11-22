@@ -43,7 +43,7 @@
 | PlayManualVibration(number intensity, number duration, boolean affectSmallMotors, boolean affectLargeMotors) | None | Manually play a vibration using the given values | None |
 | PlayCameraShakeEffect([CameraShakeAsset](camera_shake_asset) cameraShakeAsset, number scale) | None | Play a camera shake effect on this User with a scale multiplier	| None |
 | PlayCameraShakeEffect([CameraShakeAsset](camera_shake_asset) cameraShakeAsset) | None | Play a camera shake effect on this User | None |
-| SetMoveOverride([Vector2D](vector_2d) scale, [Vector2D](vector_2d) add) | None | Set a scale on the user's actual move input and an addition 2D vector to add to it. Used for example to auto-walk a player forward but scaling the real input down to zero and adding an additional value | None |
+| [SetMoveOverride](#setmoveoverride)([Vector2D](vector_2d) scale, [Vector2D](vector_2d) add) | None | Set a scale on the user's actual move input and an addition 2D vector to add to it. Used for example to auto-walk a player forward but scaling the real input down to zero and adding an additional value | None |
 | SetLookOverride([Vector2D](vector_2d) scale, [Vector2D](vector_2d) add) | None | Set a scale on the user's actual look input and an addition 2D vector to add to it. Used for example to auto-look a player at a particular point by scaling the real input down to zero and adding an additional value | None |
 | SetLeaderboardValue(string leaderboardId, number value, function callback) | None | Set a value in the given leaderboard with the given value. Call the given callback with the result | Server Only |
 | SetLeaderboardValue(string leaderboardId, number value) | None | Set a value in the given leaderboard with the given value | Server Only |
@@ -83,5 +83,19 @@ function UserScript:UpdateLeaderboards()
     self:GetEntity():GetLeaderboardValue("my-cool-leaderboard", function(score, rank)
         self:GetEntity().leaderboardsWidget.js.data.myScore = { score = score, rank = rank }
     end)
+end
+```
+### SetMoveOverride
+
+SetMoveOveride lets you do two things:
+
+1. Scale user input on the X and Y axes
+2. Add a fixed amount to user input on the X and Y axes
+
+For example, to force the user to move only left and right:
+
+```lua
+function UserScript:Init()
+  self:GetEntity():SetMoveOverride(Vector2D.New(1, 0), Vector2D.Zero)
 end
 ```
