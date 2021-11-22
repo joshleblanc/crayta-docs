@@ -75,3 +75,13 @@ Here's an example of sending an event called SomeEvent which will progress any m
 ```lua
 self:GetEntity():GetUser():SendXPEvent("SomeEvent", {someParameter1 = someValue1, someParameter2 = someValue2})
 ```
+
+### GetLeaderboardValue
+
+```lua
+function UserScript:UpdateLeaderboards()
+    self:GetEntity():GetLeaderboardValue("my-cool-leaderboard", function(score, rank)
+        self:GetEntity().leaderboardsWidget.js.data.myScore = { score = score, rank = rank }
+    end)
+end
+```
