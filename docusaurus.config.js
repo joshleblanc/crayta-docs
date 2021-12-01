@@ -10,12 +10,11 @@ const config = {
   tagline: '',
   url: 'https://craytakit.com/',
   baseUrl: '/crayta_api/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'CraytaKit', // Usually your GitHub org/user name.
   projectName: 'CraytaKit', // Usually your repo name.
-
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -36,34 +35,33 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      navbar: {},
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Docs',
-                to: '/docs',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/crayta',
-              },
-            ],
-          },
-        ],
-        copyright: `Built with Docusaurus.`,
+      colorMode: {
+        disableSwitch: true
       },
+      navbar: {
+        items: [
+          {
+            type: 'search',
+            position: 'left'
+          }
+        ]
+      },
+      footer: {},
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['lua'],
+      },
+      algolia: {
+        // If Algolia did not provide you any appId, use 'BH4D9OD16A'
+        appId: 'BH4D9OD16A',
+  
+        // Public API key: it is safe to commit it
+        apiKey: 'c077cc7903e3009f5fb9908a63584142',
+  
+        indexName: 'crayta_api',
+  
+        //... other Algolia params
       },
     }),
 };
