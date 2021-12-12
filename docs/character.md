@@ -83,3 +83,91 @@ function ExampleScript:LookAtStuff(player)
     )
 end
 ```
+
+### PlayAction
+
+The second argument for PlayAction is a table of properties.
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| playbackSpeed | number | Sets the speed to play this animation at. 2 = double speed, 0.5 = half speed |
+| playbackTime | number | Sets the time that this animation should take in seconds |
+| events | table | Some actions trigger events – these are functions that will be triggered in your Lua code once the animation for an action reaches a certain point |
+
+#### Grips
+
+##### Cuff
+###### Actions
+
+None
+
+##### Unarmed
+###### Actions
+
+None
+
+##### Knife
+###### Events
+
+| Action | Event | Branching | Description |
+| ---- | ------ | --------- | ----------- | 
+| Melee | None | None | This will perform a ‘slashing’ animation |
+| Melee | MeleeImpact | No | This will trigger at the point in the animation when the knife looks like it should hit its target |
+
+##### Pistol
+###### Actions
+
+| Action | Event | Branching | Description |
+| ---- | ------ | --------- | ----------- | 
+| Fire | None  | None | This will perform a ‘shooting’ animation |
+| Reload | None | None | This will perform a ‘reload’ animation |
+| Reload | AmmoAdded | No | This will trigger at the point in the animation when the pistol clip has been inserted into the pistol |
+| Melee | None | None | This will perform a ‘pistol whip’ animation |
+| Melee | MeleeImpact | No | This will trigger at the point in the animation when the pistol looks like it should hit its target |
+
+##### Rifle
+###### Actions
+
+| Action | Event | Branching | Description |
+| ---- | ------ | --------- | ----------- | 
+| Fire | None  | None | This will perform a ‘shooting’ animation |
+| Relaod | None | None | This will perform a ‘reload’ animation |
+| Reload | AmmoAdded | No | This will trigger at the point in the animation when the clip has been inserted into the pistol |
+
+##### RPG
+###### Actions
+
+| Action | Event | Branching | Description |
+| ---- | ------ | --------- | ----------- | 
+| Fire | None  | None | This will perform a ‘rocket launch’ animation |
+| Reload | None | None | This will perform a ‘reload’ animation |
+| Reload | AmmoAdded | No | This will trigger at the point in the animation when the rocket has been inserted into the RPG |
+
+##### Shotgun
+###### Actions
+
+| Action | Event | Branching | Description |
+| ---- | ------ | --------- | ----------- | 
+| Fire | None  | None | This will perform a ‘shooting’ animation |
+| Reload | None | None | This will perform a ‘reload’ animation |
+| Reload | AmmoAdded | No | This will trigger at the point in the animation when a shell has been inserted into the shotgun |
+| Reload | IsReloadComplete | Yes | If false, another shell will be inserted into the barrel without playing the intro of the animation again. If true, the reload animation will play its outro sequence and complete |
+
+###### Example
+
+```lua
+local animData = {}
+animData.playbackSpeed = 2.0
+animData.events =
+    {
+        IsReloadComplete = function ()
+           Print("Checking if full")
+           return self.bullets == self.properties.maxBullets
+        end,
+        AmmoAdded = function ()
+            self.bullets = self.bullets + 1
+            Print("Added Bullets, current ammo = " .. self.bullets )
+        end
+    }
+self:GetEntity():PlayAction("Reload", animData)
+```
