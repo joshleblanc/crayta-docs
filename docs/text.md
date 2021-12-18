@@ -21,3 +21,13 @@
 | to_string | string | Note: tostring() will lose any non-ASCII characters from the local version of the text | None |
 
 ## Examples
+
+### Text.Format
+
+```lua
+function ExampleScript:FormatStrings()
+  Text.Format("Hello, {1}", "Cereal") -- Hello, Cereal
+  Text.Format("Hello, {name}", { name = "Cereal" }) -- Hello, Cereal
+  Text.Format("Hello, {1}. Welcome to {2}.", "Cereal", "Crayta") -- Hello, Cereal. Welcome to Crayta.
+end
+```
