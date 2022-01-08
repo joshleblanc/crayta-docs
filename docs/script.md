@@ -18,7 +18,7 @@
 | GetSaveData() | table | Get the save data previously written out with SetSaveData on this script. This function returns the save data immediately | Server Only |
 | SendToScript(string eventName, ...) | None | Call eventName on this script if it exists, with the given args | None | 
 | SendToAllClients(string eventName, ...) | None | Call eventName on this script on all clients currently connected to the server with the given args. Note, this function call can not guarantee that entities are all in a ready state on the client at the time of call, and might therefore miss events during construction | Server Only |
-| SendToServer(string eventName, ...) | None | Call eventName on this script on the server | Local Only |
+| SendToServer(string eventName, ...) | None | Call eventName on this script on the server. Implicitly passes the local user as the last parameter. | Local Only |
 | SendToLocal(string eventName, ...) | None | Call eventName on this script on the client that owns the Player or User this script is attached to | Server Only |
 
 
@@ -123,4 +123,25 @@ function ExampleScript:SpawnEnemies()
 		end
 	end)
 end
+```
+
+
+### SendToServer
+
+SendToServer calls a method on the server, when running on the client. It implicitly passes the user as the last parameter.
+
+```lua
+local ExampleScript = {}
+
+ExampleScript.Properties = {}
+
+function ExampleScript:ClientInit()
+	self:SendToServer("Test")
+end
+
+function ExampleScript:Test(entity)
+	print(entity:GetName()) -- This will print `userEntity1234`
+end
+
+return ExampleScript
 ```
