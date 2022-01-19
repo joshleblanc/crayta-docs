@@ -99,7 +99,10 @@ The second argument for PlayAction is a table of properties.
 ##### Cuff
 ###### Actions
 
-None
+| Action | Event | Branching | Description |
+| ---- | ------ | --------- | ----------- | 
+| Fire | None  | None | This will perform a ‘tap on device’ animation |
+
 
 ##### Unarmed
 ###### Actions
