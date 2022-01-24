@@ -64,7 +64,7 @@
 | Destroy() | None | Destroy an Entity. Use with care as any variables referencing that Entity will now be invalid | Server Only |
 | SendToScripts(string eventName, ...) | None | Call eventName function with the given args on all scripts that have it as a function. If called on the server do it only on the server, if called on a client do it only on that client | None |
 | SendToAllClients(string eventName, ...) | None | Call eventName on all scripts of this Entity on all clients connected to the server with the given args | Server Only |
-| SendToServer(string eventName, ...) | None | Call eventName on all script of this Entity on the server | Local Only |
+| SendToServer(string eventName, ...) | None | Call eventName on all script of this Entity on the server. Passes the local user as the last parameter implicitly | Local Only |
 | SendToLocal(string eventName, ...) | None | Call eventName on all scripts of this Entity on the client that owns the Player or User this script is attached to | Server Only |
 | IsLocal() | boolean | See if this Entity is owned by the local client | Local Only |
 | IsClient() | boolean | Check if this Entity is on the client | Deprecated |
@@ -145,6 +145,27 @@ foot_l
 thigh_r
 calf_r
 foot_r
+```
+
+
+### SendToServer
+
+SendToServer calls a method on the server, when running on the client. It implicitly passes the user as the last parameter.
+
+```lua
+local ExampleScript = {}
+
+ExampleScript.Properties = {}
+
+function ExampleScript:ClientInit()
+	self:GetEntity():SendToServer("Test")
+end
+
+function ExampleScript:Test(entity)
+	print(entity:GetName()) -- This will print `userEntity1234`
+end
+
+return ExampleScript
 ```
 
 ### PlayTimeline 

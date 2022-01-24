@@ -14,6 +14,6 @@
 | FindScriptProperties(string scriptName) | [Properties](properties) | Find all properties for script by name | None |
 | FindScriptProperties([ScriptAsset](script_asset) scriptAsset) | [Properties](properties) | Find all properties for script by script asset | None |
 | FindAllScriptProperties(string scriptName) | table | Find all script properties for a script by name | None |
-| FindAllScriptProperties([ScriptAsset](script_asset) scriptAsset) | Find all script properties for a script asset | None |
+| FindAllScriptProperties([ScriptAsset](script_asset) scriptAsset) | table | Find all script properties for a script asset | None |
 
 ## Examples
