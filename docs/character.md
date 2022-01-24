@@ -101,8 +101,27 @@ The second argument for PlayAction is a table of properties.
 
 | Action | Event | Branching | Description |
 | ---- | ------ | --------- | ----------- | 
-| Fire | None  | None | This will perform a ‘tap on device’ animation |
+| Fire | None  | None | This will perform a 'interacting' animation with the cuff screen |
+| Fire | IsCompleted | Yes | If false, the player will start another cycle of interacting with the screen. If true, then the animation will end. |
+| Fire | OnCompleted | No | Triggers at the end of the animation (after `IsCompleted` returns true if the event is defined). |
 
+###### Example
+
+```lua
+local animData = {}
+animData.playbackSpeed = 1.0
+animData.events =
+    {
+        IsCompleted = function ()
+           Print("Checking if player is still looking at a menu")
+           return self.inMenu
+        end,
+        OnCompleted = function ()
+            Print("Finished interacting with menu")
+        end
+    }
+self:GetEntity():PlayAction("Fire", animData)
+```
 
 ##### Unarmed
 ###### Actions
