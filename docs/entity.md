@@ -229,3 +229,23 @@ for time = 0, 8 do
 end
 self:GetEntity():PlayTimeline(timeline)
 ```
+
+### onInteract
+
+The onInteract event is sent when a player iteracts with the entity. 
+
+```lua
+ExampleScript.Properties = {
+  { name = "entityToInteractWith", type = "entity" }
+}
+
+function ExampleScript:Init()
+  self.properties.entityToInteractWith.onInteract:Listen(self, "HandleInteraction")
+end
+
+function ExampleScript:HandleInteraction(player, hitResult, entity)
+  print("The player that interacted was " .. player:GetName())
+  print("The interaction was at " .. hitResult:GetPosition)
+  print("The entity that was interacted with was " .. entity:GetName())
+end
+```
