@@ -114,7 +114,7 @@ animData.events =
     {
         IsCompleted = function ()
            Print("Checking if player is still looking at a menu")
-           return self.inMenu
+           return not self.inMenu
         end,
         OnCompleted = function ()
             Print("Finished interacting with menu")
