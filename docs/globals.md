@@ -2,19 +2,19 @@
 
 ## Functions
 
-| Function Name     | Return Type | Description                                                                                                                                               | Tags          |
-|-------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| [IsInSchedule()](#isinschedule)    | boolean     | Returns whether the function is executed inside a schedule or not                                                                                         | None          |
-| [Wait(number time)](#wait) | number      | Wait for at least given time interval in seconds then resume execution, and return the exact time taken (which will be the next frame after time seconds) | Schedule-Only |
-| [Wait()](#wait)            | number      | Wait for the next frame, then resume execution                                                                                                            |               |
-| [print(...)](#print)                       | None    | Standard print function (same as Print), takes a comma separated list of arguments and prints out their string representation.       | None |
-| [Print(...)](#print-1)                       | None    | Standard print function (same as print), takes a comma separated list of arguments and prints out their string representation.       | None |
-| [printf(...)](#printf)                      | None    | This print function replaces instances of {1} in format with the first argument passed in, {2} with the second etc (same as Printf). | None |
-| [Printf(...)](#printf-1)                      | None    | This print function replaces instances of {1} in format with the first argument passed in, {2} with the second etc (same as printf). | None |
-| [FormatString(string format, ...)](#formatstring) | string  | Format a string using either {1}, {2} as in Printf, etc or using named variables.                                                    | None |
-| [GetWorld()](#getworld)                       | [World](World)   | Get the World object                                                                                                                 | None |
-| [IsClient()](isclient)                       | boolean | Return true if this script is running on the client                                                                                  | None |
-| [IsServer()](#isserver)                       | boolean | Return true if this script is running on the server                                                                                  | None |
+| Function Name                                     | Return Type    | Description                                                                                                                                               | Tags          |
+|---------------------------------------------------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| [IsInSchedule()](#isinschedule)                   | boolean        | Returns whether the function is executed inside a schedule or not                                                                                         | None          |
+| [Wait(number time)](#wait)                        | number         | Wait for at least given time interval in seconds then resume execution, and return the exact time taken (which will be the next frame after time seconds) | Schedule-Only |
+| [Wait()](#wait)                                   | number         | Wait for the next frame, then resume execution                                                                                                            |               |
+| [print(...)](#print)                              | None           | Standard print function (same as Print), takes a comma separated list of arguments and prints out their string representation.                            | None          |
+| [Print(...)](#print-1)                            | None           | Standard print function (same as print), takes a comma separated list of arguments and prints out their string representation.                            | None          |
+| [printf(...)](#printf)                            | None           | This print function replaces instances of {1} in format with the first argument passed in, {2} with the second etc (same as Printf).                      | None          |
+| [Printf(...)](#printf-1)                          | None           | This print function replaces instances of {1} in format with the first argument passed in, {2} with the second etc (same as printf).                      | None          |
+| [FormatString(string format, ...)](#formatstring) | string         | Format a string using either {1}, {2} as in Printf, etc or using named variables.                                                                         | None          |
+| [GetWorld()](#getworld)                           | [World](World) | Get the World object                                                                                                                                      | None          |
+| [IsClient()](isclient)                            | boolean        | Return true if this script is running on the client                                                                                                       | None          |
+| [IsServer()](#isserver)                           | boolean        | Return true if this script is running on the server                                                                                                       | None          |
 
 ## Examples
 

@@ -2,8 +2,8 @@
 
 ## Functions
 
-| Function Name | Return Type | Description | Tags |
-|---------------|-------------|-------------|------|
-| Stop() | None | Stop the effect | None |
+| Function Name | Return Type | Description     | Tags |
+|---------------|-------------|-----------------|------|
+| Stop()        | None        | Stop the effect | None |
 
 ## Examples
