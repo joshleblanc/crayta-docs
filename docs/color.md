@@ -4,8 +4,8 @@
 
 | Constructor Name | Return Type | Description | Tags |
 |---------------|-------------|-------------|------|
-| Color.New(number red, number green, number blue, number alpha) | [Color](color) | 	Constructs a Color with the given values |
-| Color.New(number red, number green, number blue) | [Color](color) | Constructs a Color with the given values |
+| Color.New(number red, number green, number blue, number alpha) | [Color](color) | 	Constructs a Color with the given integer values in range 0 to 255 |
+| Color.New(number red, number green, number blue) | [Color](color) | Constructs a Color with the given integer values in range 0 to 255 |
 
 ## Properties
 
