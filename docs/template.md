@@ -17,8 +17,8 @@
 | FindAllScriptProperties([ScriptAsset](script_asset) scriptAsset) | table                    | Find all script properties for a script asset                   | None |
 | FindWidgetProperty(string propertyName)                          | table                    | Get the value of a widget property on this template             | None |
 | FindWidgetProperties(string widgetName)                          | table                    | None                                                            | None |
-| FindWidgetProperties([WidgetAsset](widgetAsset))                 | table                    | None                                                            | None |
+| FindWidgetProperties([WidgetAsset](widget_asset) widgetAsset)    | table                    | None                                                            | None |
 | FindAllWidgetProperties(string widgetName)                       | table                    | None                                                            | None |
-| FindAllWidgetProperties([WidgetAsset](widgetAsset))              | table                    | None                                                            | None |
+| FindAllWidgetProperties([WidgetAsset](widget_asset) widgetAsset) | table                    | None                                                            | None |
 
 ## Examples
