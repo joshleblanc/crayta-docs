@@ -17,5 +17,34 @@
 | interactable   | boolean          | The trigger box is interactable                                                                                                                                                                                                                          | Read-Write |
 | onTriggerEnter | [Event](event)   | Called when this trigger volume is entered by a valid entity, with the Entity passed as an argument, as well as the trigger Entity from which the onTriggerEnter event is sent. An alternative to listening for OnTriggerEnter in a script on the entity | Read       |
 | onTriggerExit  | [Event](event)   | Called when this trigger volume is exited by a valid entity, with the Entity passed as an argument, as well as the trigger Entity from which the onTriggerExit event is sent. An alternative to listening for OnTriggerExit in a script on the entity    | Read       |
- 
+
 ## Examples
+
+### IsOverlapping
+
+The following code allows to keep a light on, as long as there is someone inside the trigger, without the need to setup the trigger events
+
+```lua
+scriptTest.Properties = {
+	{name = "trigger", type = "entity", tooltip = "Action Trigger"},
+	{name = "voxelNeon", type = "entity",},
+}
+
+function scriptTest:TurnLight (itsOn)
+	self.properties.voxelNeon.visible = itsOn
+end
+
+function scriptTest:OnTick()
+	GetWorld():ForEachUser(function(usr)
+		local player = usr:GetPlayer()
+		if self.properties.trigger:IsOverlapping(player) == false then
+			self:TurnLight (false)
+			return
+		else
+			self:TurnLight (true)
+		end
+	end)
+end
+
+
+```
