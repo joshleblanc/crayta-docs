@@ -54,10 +54,10 @@ const config = {
       },
       algolia: {
         // If Algolia did not provide you any appId, use 'BH4D9OD16A'
-        appId: 'BH4D9OD16A',
+        appId: 'OPJIAJ09HW',
   
         // Public API key: it is safe to commit it
-        apiKey: 'c077cc7903e3009f5fb9908a63584142',
+        apiKey: 'd9e814b32ec0bc54d9f91ff50a1eb7c7',
   
         indexName: 'crayta_api',
   
